@@ -1,0 +1,27 @@
+{
+  "name": "ForntEnd",
+  "version": "1.0.0",
+  "description": "FrontendClass",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windy9109/FrontendClass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/windy9109/FrontendClass/issues"
+  },
+  "homepage": "https://github.com/windy9109/FrontendClass#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
