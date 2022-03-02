@@ -19,9 +19,8 @@
   },
   "homepage": "https://github.com/windy9109/FrontendClass#readme",
   "devDependencies": {
+    "lodash": "^4.17.21",
     "parcel-bundler": "^1.12.5"
   },
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
+  "dependencies": {}
 }
