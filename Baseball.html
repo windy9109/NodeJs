@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--<script defer src="./main.js"></script>-->
+  <!--<script defer src="./main2.js"></script>-->
+  <!--<script defer src="./main4.js"></script>-->
+  <script src="./Baseball.js"></script>
+  <!-- main.js에서 index.html을 제어하기위해 defer를 붙여준다 -->
+  <script src="./getType.js"></script>
+  <script src="./getRandom.js"></script>
+
+<script>
+
+const randomList = [];
+var regame = false;
+
+
+function prod(){
+    var inputOne = document.getElementById("one").value;
+    var inputTwo = document.getElementById("two").value;
+    var inputThree = document.getElementById("three").value;
+
+console.log(inputOne)
+console.log(inputTwo)
+console.log(inputThree)
+
+const inputNumber = [inputOne,inputTwo,inputThree]
+
+
+//스코어 배열안에 숫자가 없을경우 랜덤한 값을 넣는다.
+if(randomList.length === 0){
+    regame = true;
+}else{
+//있을경우 랜덤값을 넣지않는다.
+    regame = false;
+}
+
+//겹치지 않는 랜덤한 0~10까지의 수 3개를 넣는다.
+for(var i=0; i<3; i++){
+    // var random = parseInt(Math.random()*(10+0-1)+0);
+    if(regame === true){
+        randomList.push(parseInt(Math.random()*(10+0-1)+0));
+    }else{
+        console.log(" ");
+    }
+    //만약 겹친다면 랜덤한 수를 다시뽑게함
+    if(i===1){
+        for(var j=i-1; j===0; j--){
+            if(randomList[j] === randomList[i]){
+                randomList.push(i,1);
+                i--;
+            }
+        }
+    }
+}
+
+//S B 비교
+// if(){
+
+// }
+
+//스코어가 3일경우 마침
+// if( s === 3){
+//     regame = true;
+// }
+
+console.log(randomList);
+
+
+
+
+}
+</script>
+
+</head>
+<body>
+  <h1>야구게임</h1>
+  <form action="Baseball.js" method="post">
+  <div> 첫번째 값을 입력해주세요 </div>
+  <input type="text" name="one" id="one">
+  <div> 두번째 값을 입력해주세요 </div>
+  <input type="text" name="two" id="two">
+  <div> 세번째 값을 입력해주세요 </div>
+  <input type="text" name="three" id="three">
+
+  <input type="button" value="send" onclick="prod()">
+  <input type="reset" value="원래대로">
+
+</form>
+
+
+
+
+  <ul></ul>
+</body>
+</html>
