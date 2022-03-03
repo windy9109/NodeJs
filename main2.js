@@ -1,4 +1,4 @@
-import _, { countBy, identity } from 'lodash';
+import _, { countBy, identity, replace } from 'lodash';
 import getType from './getType'
 import random from './getRandom'
 
@@ -78,12 +78,53 @@ console.log(daughterdCar)
 
 
 
+//JS 데이터
+
+//String: "",'', ``
+//Number
+//Boolean: true, false
+//undefined
+//null
+//Array: []
+//Ojbect: {}
 
 
 
+const result = 'Hello world!'.indexOf('Heropy')
+console.log(result)
+//일치하는 숫자가 없으면 -1을 반환
+//String.prototype.indexOf()
+
+
+//공백포함 카운트
+const str ='0123'
+console.log(str.length)
+console.log('34 2453'.length)
+
+//-1
+console.log(str.indexOf('world'))
+
+//boolean => false
+console.log(str.indexOf('world') !== -1)
+
+
+const str2 = 'hello world!'
+console.log(str2.slice(6,11))
+
+//해당하는 위치를 찾아서 두번째 인수로 대체시켜버림
+console.log(str2.replace('world!', 'HEROPY'))
+
+
+const str3 = 'windy9109@naver.com'
+//정규표현식
+//match는 정규표현식을 비교하여 반환함
+console.log(str3.match(/.+(?=@)/)[0])
 
 
 
+//공백제거
+const str4 = '      Hello world      '
+console.log(str4.trim())
 
 
 
