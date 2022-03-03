@@ -13,11 +13,15 @@
   <script src="./getType.js"></script>
   <script src="./getRandom.js"></script>
 
+<style>
+    input{ width: 300px; height: 30px; }
+    </style>
+
 <script>
 
 const randomList = [];
 var regame = false;
-
+var count = 0;
 
 function start(){
 
@@ -39,6 +43,7 @@ var inputThree = document.getElementById("three").value
 
 
 function prod(){
+
 
 var inputOne = document.getElementById("one").value;
 var inputTwo = document.getElementById("two").value;
@@ -64,12 +69,12 @@ if(randomList.length === 0){
 if(regame === true){
     for(var i=0; i<3; i++){
         // var random = parseInt(Math.random()*(10+0-1)+0);
-            randomList.push(parseInt(Math.random()*(9+0-1)+0));
+        randomList.push(parseInt(Math.random()*(9+0-1)+0));
         //만약 겹친다면 랜덤한 수를 다시뽑게함
-        if(i===1 || i===2 ){
-            for(var j=i-1; j<=0; j--){
+        if(i === 1 || i === 2 ){
+            for(var j=i-1; j >= 0; j--){
                 if(randomList[j] === randomList[i]){
-                    randomList.splice(i,1);
+                    randomList.splice(q,1);
                     i--;
                 }
             }
@@ -82,6 +87,7 @@ if(regame === true){
 
     var s=0
     var b=0
+ 
     for(var i=0; i<randomList.length; i++){
 
         for(var j=0; j<randomList.length; j++){
@@ -94,16 +100,29 @@ if(regame === true){
             }
         }
     }
-
-    console.log("s: "+s+"b: "+b)
+    console.log("s: "+s+", b: "+b)
+    alert("s: "+s+", b: "+b)
     if(s === 0 && b === 0){
-        console.log("하나도 맞추지 못했습니다.")
+        alert("하나도 맞추지 못했습니다.")
     }
+    count++;
+    console.log("횟수:"+count)
+console.log("정답: "+randomList)
+console.log("입력값: "+inputNumber)
 
-console.log(randomList)
-console.log(inputNumber)
 
- }
+if(s === 3 ){
+    alert("축하합니다. 정답입니다."+count+"회차만에 맞추셨습니다. 게임이 초기화됩니다.")
+    console.log("축하합니다. 정답입니다."+count+"회차만에 맞추셨습니다. 게임이 초기화됩니다.")
+    //초기화
+    randomList.splice(0,3);
+    regame = false;
+    count = 0;
+    return;
+}
+
+
+}
 
 
 </script>
@@ -111,16 +130,15 @@ console.log(inputNumber)
 </head>
 <body>
   <h1>야구게임</h1>
-  <form action="Baseball.js" method="post">
+  <form>
   <div> 첫번째 값을 입력해주세요 </div>
-  <input type="number" name="one" id="one" min="0" max="9">
+  <input type="number" name="one" id="one" min="0" max="9"><br>
   <div> 두번째 값을 입력해주세요 </div>
-  <input type="number" name="two" id="two" min="0" max="9">
+  <input type="number" name="two" id="two" min="0" max="9"><br>
   <div> 세번째 값을 입력해주세요 </div>
-  <input type="number" name="three" id="three" min="0" max="9">
+  <input type="number" name="three" id="three" min="0" max="9"><br><br>
 
-  <input type="button" value="send" onclick="start()">
-  <input type="reset" value="원래대로">
+  <input type="reset" value="send" onclick="start()">
 
 </form>
 
