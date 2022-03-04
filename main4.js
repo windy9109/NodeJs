@@ -84,3 +84,51 @@ console.log(numbers)
 //결과: ['Cherry', 'Banana', 'Orange', 'Apple']
 fruits.splice(2,0,'Orange')
 console.log(fruits)
+
+const userAge = {
+//객체데이터
+//key: value
+name: 'Heropy11',
+age: 85
+}
+
+const userEmail = {
+    name: 'Heropy22',
+    email: 'thesecon@gmail.com'
+}
+//대상 객체 userAge, 타겟객체 userEmail
+const target = Object.assign({}, userAge, userEmail)
+//결과: {name: 'Heropy22', age: 85, email: 'thesecon@gmail.com'}
+console.log(target)
+//결과: {name: 'Heropy11', age: 85}
+console.log(userAge)
+//결과: true
+//같은 장소를 바라보고 있기때문에 true
+console.log(target === userAge)
+
+
+const a3 = { k:123 }
+const b3 = { k: 123 }
+//결과: false
+//다른 장소를 바라보고 있기 때문에 false
+console.log(a === b)
+
+
+
+
+const user2 ={
+    name: 'Heropy22',
+    age: 85,
+    email: 'thesecon@gmail.com'
+}
+
+const keys = Object.keys(user2)
+//결과: ['name', 'age', 'email']
+console.log(keys) //key값을 추출함
+//결과: thesecon@gmail.com
+console.log(user2['email']) //email을 추출함
+
+const values = keys.map(key => user2[key]) 
+//반환된값을 받아서 values에 넣는다
+//결과:  ['Heropy22', 85, 'thesecon@gmail.com']
+console.log(values) //값을 추출함
