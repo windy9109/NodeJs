@@ -370,7 +370,7 @@ clearInterval(timer)
 function timeout(Callback){
     setTimeout(() =>{
         console.log('Heropy!')
-        Callback()
+         Callback()
     }, 5000)
   }
     timeout(() => { //익명함수 호출
