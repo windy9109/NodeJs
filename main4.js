@@ -132,3 +132,60 @@ const values = keys.map(key => user2[key])
 //반환된값을 받아서 values에 넣는다
 //결과:  ['Heropy22', 85, 'thesecon@gmail.com']
 console.log(values) //값을 추출함
+
+
+
+//구조분해할당(Destructuring assignment)
+//비구조화 할당
+const user3 = {
+    name:'Heropy',
+    age: 85,
+    email:'qwer123@gamil.com'
+}
+
+const { name: heropy3, age, address ='Korea' } = user3
+//E.g, user.address
+
+
+
+console.log(`사용자의 이름은 ${heropy3}입니다. `+'이름은'+user3['name'])
+console.log(`${heropy3}의 나이는 ${age}세 입니다.`)
+console.log(`${heropy3}의 이메일 주소는 ${user3.email}입니다.`)
+console.log(address) //정의되지않았음 undefined 출력
+console.log(user3.address)
+
+const fruits7 = ['Apple','Banana','Cherry']
+const [a7,b7,c7,d7] = fruits7
+console.log(a7,b7,c7,d7) //d7은 데이터없음 > undefined
+console.log(fruits7[0],fruits7[1],fruits7[2],fruits7[3])
+
+
+
+
+
+
+//전개연산자(Spread)
+const fruits8 = ['Apple','Banana','Cherry','Orange']
+console.log(fruits8)
+console.log(...fruits8) //배열데이터를 쉼표로 구분하는 각각의 아이템으로 전개해서 출력함
+//console.log('Apple','Banana','Cherry')
+
+//개체데이터로 변환해주는 함수
+function toObject(a8,b8,...c8){ //...c8 나머지 매개변수 모두 출력
+return{
+    사과:a8,
+    b8, //축약형
+    체리오렌지:c8 //나머지매개변수들
+    }
+}
+console.log(toObject(...fruits8))
+
+
+
+const toObject2 = (a12,b12,...c12) => ({a12, b12, c12})
+//중괄호는 화살표함수에서 함수의 범위를 나타내는 단순한 블럭의 의미이므로
+//소괄호를 열어서 객체데이터를 정의한다. ({})
+
+console.log(toObject2(...fruits8))
+
+
