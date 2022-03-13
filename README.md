@@ -1,2 +1,0 @@
-# FrontendClass
-FrontendClass
