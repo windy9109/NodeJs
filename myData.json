@@ -1,0 +1,13 @@
+{
+    "string" : "heropy",
+    "number" : 123,
+    "boolean" : true,
+    "null": null,
+    "object": {},
+    "array": []
+    //undefined는 에러발생
+   // "undefined": "undefined"
+}
+
+
+//{"name":"HEROPY","age":85,"emails":["thesecon@gmail.com","sun035@naver.com"]}
